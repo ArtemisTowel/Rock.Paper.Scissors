@@ -1,9 +1,14 @@
+function playGame() {
+
+let humanScore=0;
+let computerScore=0;
+
 function getHumanChoice(){
-return prompt("Rock, Paper, Scissors?").toLowerCase()
-    console.log(getHumanChoice())}
+return prompt("Rock, Paper, Scissors?").toLowerCase();
+}
 
 function getComputerChoice(){
-  let a = Math.random()
+  let a = Math.random();
     if (a<=.34){
         return "rock"
     }
@@ -13,11 +18,7 @@ function getComputerChoice(){
     else {
         return "scissors"
     }
-    console.log(getComputerChoice())}
-
-    let humanScore=0
-    let computerScore=0
-
+}
 
 
 function playRound(humanChoice, computerChoice){
@@ -59,11 +60,31 @@ function playRound(humanChoice, computerChoice){
             return "Rock beats Scissors! You Lose!"
         }
     }
+}
 
+for (let i = 0; i < 5; i++) {
+    const humanChoice = getHumanChoice();
+    const computerChoice= getComputerChoice();
+    const roundResult = playRound(humanChoice, computerChoice);
+    console.log(roundResult);
+    console.log(humanScore, computerScore)
 }
 
 
+function keepScore(){
+    if (humanScore>computerScore){
+        return "Congrats! You Won!"
+    }
+    else if (computerScore>humanScore){
+        return "Too bad. Play Again!"
+    }
+    else {
+        return "Game ends in a Tie!"
+    }
+}
 
-console.log(playRound(getHumanChoice(),getComputerChoice()))
+return keepScore();
 
-console.log(humanScore, computerScore)
+}
+
+console.log(playGame());
