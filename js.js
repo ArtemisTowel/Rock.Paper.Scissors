@@ -20,7 +20,6 @@ function getComputerChoice(){
     }
 }
 
-
 function playRound(humanChoice, computerChoice){
     
     if(humanChoice === computerChoice){
@@ -69,7 +68,6 @@ for (let i = 0; i < 5; i++) {
     console.log(roundResult);
     console.log(humanScore, computerScore)
 }
-
 
 function keepScore(){
     if (humanScore>computerScore){
